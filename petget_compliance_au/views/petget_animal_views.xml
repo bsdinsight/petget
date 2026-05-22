@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petget_compliance_au_view_form_animal" model="ir.ui.view">
+        <field name="name">petget.animal.form.compliance</field>
+        <field name="model">petget.animal</field>
+        <field name="inherit_id" ref="petget_core.petget_core_view_form_animal"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]" position="before">
+                <field name="compliance_warning_count" invisible="1"/>
+                <div class="alert alert-warning" role="alert"
+                     invisible="compliance_warning_count == 0">
+                    <field name="compliance_warning_html"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

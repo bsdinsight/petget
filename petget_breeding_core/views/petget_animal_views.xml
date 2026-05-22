@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petget_breeding_view_form_animal" model="ir.ui.view">
+        <field name="name">petget.animal.form.breeding</field>
+        <field name="model">petget.animal</field>
+        <field name="inherit_id" ref="petget_core.petget_core_view_form_animal"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='dam_id']" position="after">
+                <field name="litter_id"/>
+            </xpath>
+            <xpath expr="//field[@name='color']" position="after">
+                <field name="is_pregnant" invisible="sex != 'female'"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Breeding" name="breeding" invisible="sex != 'female'">
+                    <separator string="Heat Cycles"/>
+                    <field name="heat_cycle_ids">
+                        <list editable="bottom">
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="state"/>
+                            <field name="notes" optional="hide"/>
+                        </list>
+                    </field>
+                    <separator string="Pregnancies"/>
+                    <field name="pregnancy_ids">
+                        <list>
+                            <field name="confirmation_date"/>
+                            <field name="expected_due_date"/>
+                            <field name="litter_id"/>
+                            <field name="state"/>
+                        </list>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

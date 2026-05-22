@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petget_breeding_view_search_litter" model="ir.ui.view">
+        <field name="name">petget.litter.search</field>
+        <field name="model">petget.litter</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Litter ID"/>
+                <field name="dam_id"/>
+                <field name="sire_id"/>
+                <filter name="filter_draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="filter_confirmed" string="Confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter name="filter_closed" string="Closed" domain="[('state', '=', 'closed')]"/>
+                <separator/>
+                <filter name="group_dam" string="Dam" context="{'group_by': 'dam_id'}"/>
+                <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="petget_breeding_view_list_litter" model="ir.ui.view">
+        <field name="name">petget.litter.list</field>
+        <field name="model">petget.litter</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="date_of_birth"/>
+                <field name="dam_id"/>
+                <field name="sire_id"/>
+                <field name="offspring_count" string="Puppies"/>
+                <field name="total_offspring" optional="hide"/>
+                <field name="whelping_method" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-success="state == 'confirmed'"
+                       decoration-muted="state == 'closed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="petget_breeding_view_form_litter" model="ir.ui.view">
+        <field name="name">petget.litter.form</field>
+        <field name="model">petget.litter</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_add_puppy" type="object" string="Add Puppy"
+                            class="btn-primary"/>
+                    <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_offspring" type="object"
+                                class="oe_stat_button" icon="fa-paw">
+                            <field name="offspring_count" widget="statinfo" string="Puppies"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="From Pregnancy (read-only parents)">
+                            <field name="pregnancy_id" required="1"
+                                   options="{'no_create': True}"/>
+                            <field name="dam_id"/>
+                            <field name="sire_id"/>
+                            <field name="external_sire" invisible="not external_sire"/>
+                        </group>
+                        <group string="Whelping">
+                            <field name="date_of_birth"/>
+                            <field name="whelping_method"/>
+                            <field name="vet_attended"/>
+                            <field name="average_birth_weight"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Counts">
+                            <field name="total_offspring"/>
+                            <field name="born_alive"/>
+                            <field name="stillborn"/>
+                            <field name="deceased_neonatal"/>
+                            <field name="males_count"/>
+                            <field name="females_count"/>
+                            <field name="survived_count"/>
+                        </group>
+                        <group string="Registration">
+                            <field name="litter_reg_number"/>
+                            <field name="litter_reg_date"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Puppies" name="puppies">
+                            <field name="offspring_ids">
+                                <list editable="bottom">
+                                    <field name="system_id" readonly="1"/>
+                                    <field name="name"/>
+                                    <field name="sex"/>
+                                    <field name="birth_order"/>
+                                    <field name="birth_weight_g"/>
+                                    <field name="date_of_birth"/>
+                                    <field name="status"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Complications / Notes" name="notes">
+                            <separator string="Complications"/>
+                            <field name="complications" nolabel="1"/>
+                            <separator string="Notes"/>
+                            <field name="notes" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="petget_breeding_action_litter" model="ir.actions.act_window">
+        <field name="name">Litters</field>
+        <field name="res_model">petget.litter</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="petget_breeding_view_search_litter"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record your first litter</p>
+            <p>Track whelping, then add each puppy one by one — every puppy gets its own profile.</p>
+        </field>
+    </record>
+
+</odoo>

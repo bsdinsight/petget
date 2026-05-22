@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="tpl_welcome" model="petget.followup.template">
+            <field name="name">Welcome call</field>
+            <field name="sequence">10</field>
+            <field name="offset_days">2</field>
+            <field name="note">Thank the buyer, check the puppy is settling in, and answer any questions.</field>
+        </record>
+
+        <record id="tpl_week1" model="petget.followup.template">
+            <field name="name">One-week check-in</field>
+            <field name="sequence">20</field>
+            <field name="offset_days">7</field>
+            <field name="note">Check feeding and toileting; confirm the vaccination and worming schedule.</field>
+        </record>
+
+        <record id="tpl_vacc" model="petget.followup.template">
+            <field name="name">Vaccination &amp; microchip reminder</field>
+            <field name="sequence">30</field>
+            <field name="offset_days">21</field>
+            <field name="note">Remind the owner about the next vaccination and microchip check.</field>
+        </record>
+
+        <record id="tpl_month1" model="petget.followup.template">
+            <field name="name">One-month check-in</field>
+            <field name="sequence">40</field>
+            <field name="offset_days">30</field>
+            <field name="note">How is the puppy doing? Share diet and basic training tips.</field>
+        </record>
+
+        <record id="tpl_month3" model="petget.followup.template">
+            <field name="name">Three-month check-in</field>
+            <field name="sequence">50</field>
+            <field name="offset_days">90</field>
+            <field name="note">Health and growth check-in; discuss desexing options.</field>
+        </record>
+
+        <record id="tpl_month6" model="petget.followup.template">
+            <field name="name">Six-month check-in &amp; referral</field>
+            <field name="sequence">60</field>
+            <field name="offset_days">180</field>
+            <field name="note">Heat/desexing reminder. Ask how things are going and invite a review or referral.</field>
+        </record>
+
+        <record id="tpl_year1" model="petget.followup.template">
+            <field name="name">Anniversary &amp; annual reminder</field>
+            <field name="sequence">70</field>
+            <field name="offset_days">365</field>
+            <field name="note">Happy 1-year! Vaccination booster reminder; thank them and ask for referrals.</field>
+        </record>
+
+    </data>
+</odoo>

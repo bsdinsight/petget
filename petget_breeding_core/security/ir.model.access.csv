@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petget_heat_cycle_user,petget.heat.cycle.user,model_petget_heat_cycle,petget_core.group_user,1,1,1,1
+access_petget_heat_cycle_manager,petget.heat.cycle.manager,model_petget_heat_cycle,petget_core.group_manager,1,1,1,1
+access_petget_heat_progesterone_user,petget.heat.progesterone.user,model_petget_heat_progesterone,petget_core.group_user,1,1,1,1
+access_petget_heat_progesterone_manager,petget.heat.progesterone.manager,model_petget_heat_progesterone,petget_core.group_manager,1,1,1,1
+access_petget_mating_user,petget.mating.user,model_petget_mating,petget_core.group_user,1,1,1,1
+access_petget_mating_manager,petget.mating.manager,model_petget_mating,petget_core.group_manager,1,1,1,1
+access_petget_pregnancy_user,petget.pregnancy.user,model_petget_pregnancy,petget_core.group_user,1,1,1,1
+access_petget_pregnancy_manager,petget.pregnancy.manager,model_petget_pregnancy,petget_core.group_manager,1,1,1,1
+access_petget_litter_user,petget.litter.user,model_petget_litter,petget_core.group_user,1,1,1,0
+access_petget_litter_manager,petget.litter.manager,model_petget_litter,petget_core.group_manager,1,1,1,1

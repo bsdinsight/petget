@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petget_compliance_au_view_form_company" model="ir.ui.view">
+        <field name="name">res.company.form.petget.compliance</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='country_id']" position="after">
+                <field name="petget_au_state"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

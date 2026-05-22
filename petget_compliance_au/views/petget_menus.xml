@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petget_compliance_au_menu_compliance"
+              name="Compliance"
+              parent="petget_core.petget_core_menu_root"
+              sequence="50"/>
+
+    <menuitem id="petget_compliance_au_menu_rules"
+              name="Compliance Rules (AU)"
+              parent="petget_compliance_au_menu_compliance"
+              action="petget_compliance_au_action_rule"
+              sequence="10"/>
+
+</odoo>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petget_buyer_sale_view_search_reservation" model="ir.ui.view">
+        <field name="name">petget.reservation.search</field>
+        <field name="model">petget.reservation</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Reservation"/>
+                <field name="buyer_id"/>
+                <field name="animal_id"/>
+                <filter name="filter_reserved" string="Reserved" domain="[('state', '=', 'reserved')]"/>
+                <filter name="filter_deposit" string="Deposit Received" domain="[('state', '=', 'deposit')]"/>
+                <filter name="filter_sold" string="Sold" domain="[('state', '=', 'sold')]"/>
+                <filter name="filter_cancelled" string="Cancelled" domain="[('state', '=', 'cancelled')]"/>
+                <separator/>
+                <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                <filter name="group_buyer" string="Buyer" context="{'group_by': 'buyer_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="petget_buyer_sale_view_list_reservation" model="ir.ui.view">
+        <field name="name">petget.reservation.list</field>
+        <field name="model">petget.reservation</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="reservation_date"/>
+                <field name="buyer_id"/>
+                <field name="animal_id"/>
+                <field name="deposit_amount" optional="show"/>
+                <field name="sale_price" optional="hide"/>
+                <field name="currency_id" column_invisible="1"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'reserved'"
+                       decoration-warning="state == 'deposit'"
+                       decoration-success="state == 'sold'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="petget_buyer_sale_view_form_reservation" model="ir.ui.view">
+        <field name="name">petget.reservation.form</field>
+        <field name="model">petget.reservation</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_mark_deposit" type="object" string="Deposit Received"
+                            class="btn-primary" invisible="state != 'reserved'"/>
+                    <button name="action_mark_sold" type="object" string="Mark Sold"
+                            class="btn-primary" invisible="state not in ('reserved', 'deposit')"/>
+                    <button name="action_cancel" type="object" string="Cancel"
+                            invisible="state in ('sold', 'cancelled')"/>
+                    <button name="action_reset_to_reserved" type="object" string="Reset to Reserved"
+                            invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="reserved,deposit,sold"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Reservation">
+                            <field name="buyer_id"/>
+                            <field name="animal_id"/>
+                            <field name="reservation_date"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group string="Deposit &amp; Sale">
+                            <field name="deposit_amount"/>
+                            <field name="deposit_date"/>
+                            <field name="sale_price"/>
+                            <field name="sale_date"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="petget_buyer_sale_action_reservation" model="ir.actions.act_window">
+        <field name="name">Reservations</field>
+        <field name="res_model">petget.reservation</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="petget_buyer_sale_view_search_reservation"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create your first reservation</p>
+            <p>Reserve a puppy for a buyer, record the deposit, and complete the sale.</p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petget_breeding_menu_breeding"
+              name="Breeding"
+              parent="petget_core.petget_core_menu_root"
+              sequence="15"/>
+
+    <menuitem id="petget_breeding_menu_heat"
+              name="Heat Cycles"
+              parent="petget_breeding_menu_breeding"
+              action="petget_breeding_action_heat_cycle"
+              sequence="10"/>
+
+    <menuitem id="petget_breeding_menu_mating"
+              name="Matings"
+              parent="petget_breeding_menu_breeding"
+              action="petget_breeding_action_mating"
+              sequence="20"/>
+
+    <menuitem id="petget_breeding_menu_pregnancy"
+              name="Pregnancies"
+              parent="petget_breeding_menu_breeding"
+              action="petget_breeding_action_pregnancy"
+              sequence="30"/>
+
+    <menuitem id="petget_breeding_menu_litter"
+              name="Litters"
+              parent="petget_breeding_menu_breeding"
+              action="petget_breeding_action_litter"
+              sequence="40"/>
+
+</odoo>

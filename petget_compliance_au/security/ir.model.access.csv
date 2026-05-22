@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petget_compliance_au_rule_user,petget.compliance.au.rule.user,model_petget_compliance_au_rule,petget_core.group_user,1,0,0,0
+access_petget_compliance_au_rule_manager,petget.compliance.au.rule.manager,model_petget_compliance_au_rule,petget_core.group_manager,1,1,1,1
