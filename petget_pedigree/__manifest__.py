@@ -16,7 +16,7 @@ day-to-day animal list.
     'website': 'https://thepetget.com',
     'support': 'hello@thepetget.com',
     'license': 'AGPL-3',
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.png', 'static/description/screenshot1.png'],
     'depends': [
         'petget_core',
     ],

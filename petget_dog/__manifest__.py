@@ -15,7 +15,7 @@ animal's species is "Dog".
     'website': 'https://thepetget.com',
     'support': 'hello@thepetget.com',
     'license': 'AGPL-3',
-    'images': ['static/description/banner.png'],
+    'images': ['static/description/banner.png', 'static/description/screenshot1.png', 'static/description/screenshot2.png'],
     'depends': [
         'petget_core',
     ],
