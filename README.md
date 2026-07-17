@@ -26,7 +26,6 @@ what it includes and what it costs.
 | `petnaly_customer_followup` | Automatic customer-care tasks after a sale | petnaly_buyer_sale |
 | `petnaly_compliance_au` | Australian state breeding compliance rules and warnings | petnaly_breeding_core |
 | `petnaly_kb` | Breed library, care guides and stories for owners and breeders | petnaly_dog |
-| `petnaly_mobile_api` | REST/JSON API for the customer mobile app (portal users) | petnaly_core, portal |
 
 Start with `petnaly_core` + `petnaly_dog`. Add the rest as you need them.
 
