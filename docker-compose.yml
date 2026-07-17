@@ -1,0 +1,54 @@
+# Petnaly — run the open-source modules on your own machine.
+#
+#   git clone https://github.com/bsdinsight/petnaly.git
+#   cd petnaly
+#   docker compose up -d
+#
+# Then open http://localhost:8069. Odoo asks you to create a database: the
+# master password is in odoo.conf, and you choose your own admin password
+# there — nothing ships with a default login. Once the database exists,
+# install "Petnaly: Core" and "Petnaly: Dog" from the Apps menu.
+#
+# The web port is published on 127.0.0.1 only, so a fresh clone is not
+# reachable from outside your machine. Before putting this on a server the
+# internet can reach, change admin_passwd in odoo.conf first.
+#
+# Optional overrides — create a .env file next to this one:
+#   ODOO_PORT=8069
+#   POSTGRES_PASSWORD=...
+
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-odoo}
+    volumes:
+      - petnaly-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "odoo"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  web:
+    image: odoo:19
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:${ODOO_PORT:-8069}:8069"
+    volumes:
+      # This repository, mounted read-only as an Odoo addons directory.
+      - ./:/mnt/extra-addons:ro
+      - ./odoo.conf:/etc/odoo/odoo.conf:ro
+      - petnaly-web:/var/lib/odoo
+    environment:
+      PASSWORD: ${POSTGRES_PASSWORD:-odoo}
+    restart: unless-stopped
+
+volumes:
+  petnaly-db:
+  petnaly-web:

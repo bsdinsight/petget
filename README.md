@@ -31,15 +31,33 @@ Start with `petnaly_core` + `petnaly_dog`. Add the rest as you need them.
 
 ## Install
 
+Requires Odoo Community **19.0**.
+
+### With Docker (quickest)
+
 ```bash
 git clone https://github.com/bsdinsight/petnaly.git
+cd petnaly
+docker compose up -d
 ```
+
+Then open <http://localhost:8069>:
+
+1. Odoo asks you to create a database. The master password is in `odoo.conf`;
+   you pick your own admin password on that screen — **nothing here ships with
+   a default login**.
+2. Once the database exists, open **Apps**, then install **Petnaly: Core** and
+   **Petnaly: Dog**. Add the other modules as you need them.
+
+The web port is published on `127.0.0.1` only, so a fresh clone is not
+reachable from outside your machine. Change `admin_passwd` in `odoo.conf`
+before you put this on a server the internet can reach.
+
+### Into an existing Odoo
 
 1. Copy the module folders into your Odoo `addons_path`.
 2. Restart Odoo and update the apps list.
 3. Install **Petnaly: Core** (and **Petnaly: Dog**), then any extensions.
-
-Requires Odoo Community **19.0**.
 
 ## License
 
