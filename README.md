@@ -1,35 +1,44 @@
-# Petget — Breeding Management for Odoo
+# Petnaly — Breeding Management for Odoo
 
-Petget is a free, open-source (AGPL-3) **breeding management platform** for Odoo
-Community 19. It is built around a species-agnostic core (`petget.animal`) so the
-same foundation serves dogs today and other species over time.
+Petnaly is a free, open-source (AGPL-3) **breeding management platform** for Odoo
+Community 19. It is built around a species-agnostic core (`petnaly.animal`) so the
+same foundation serves dogs today, and cats and horses over time.
 
-All modules are **100% free** on the Odoo Apps Store. There are no paid modules,
-no feature gates, and no license fees. If you want help deploying, configuring for
-your local regulations, migrating data, or training your team, BSD offers
-project-based implementation services — see **https://thepetget.com**.
+Every module in this repository is **AGPL-3 and free** — no paid modules, no
+feature gates, no license fees. Clone it, run it on your own server, keep it
+forever.
+
+If you would rather not run a server yourself, **Petnaly Cloud** is the managed
+option: we host, back up and update it for you. See **https://petnaly.com** for
+what it includes and what it costs.
 
 ## Modules
 
 | Module | What it does | Depends on |
 |---|---|---|
-| `petget_core` | Foundation: animals, owners, documents, reminders, notes | base, mail, contacts |
-| `petget_breeding_core` | Heat cycles, mating/AI, pregnancy, litters | petget_core |
-| `petget_dog` | Dog species extension + breed catalogue | petget_core |
-| `petget_dog_knowledge` | Breed knowledge: life stages, feeding, growth, reproduction | petget_dog |
-| `petget_health` | Hip/elbow scoring, DNA panels, breeding-clearance warnings | petget_breeding_core |
-| `petget_pedigree` | Registration details + multi-generation pedigree tree | petget_core |
-| `petget_buyer_sale` | Buyers, reservations, deposits, sale tracking (no invoicing) | petget_core |
-| `petget_customer_followup` | Automatic customer-care tasks after a sale | petget_buyer_sale |
-| `petget_compliance_au` | Australian state breeding compliance rules and warnings | petget_breeding_core |
+| `petnaly_core` | Foundation: animals, owners, documents, reminders, notes | base, mail, contacts |
+| `petnaly_breeding_core` | Heat cycles, mating/AI, pregnancy, litters | petnaly_core |
+| `petnaly_dog` | Dog species extension + breed catalogue | petnaly_core |
+| `petnaly_dog_knowledge` | Breed knowledge: life stages, feeding, growth, reproduction | petnaly_dog |
+| `petnaly_health` | Hip/elbow scoring, DNA panels, breeding-clearance warnings | petnaly_breeding_core |
+| `petnaly_pedigree` | Registration details + multi-generation pedigree tree | petnaly_core |
+| `petnaly_buyer_sale` | Buyers, reservations, deposits, sale tracking (no invoicing) | petnaly_core |
+| `petnaly_customer_followup` | Automatic customer-care tasks after a sale | petnaly_buyer_sale |
+| `petnaly_compliance_au` | Australian state breeding compliance rules and warnings | petnaly_breeding_core |
+| `petnaly_kb` | Breed library, care guides and stories for owners and breeders | petnaly_dog |
+| `petnaly_mobile_api` | REST/JSON API for the customer mobile app (portal users) | petnaly_core, portal |
 
-Start with `petget_core` + `petget_dog`. Add the rest as you need them.
+Start with `petnaly_core` + `petnaly_dog`. Add the rest as you need them.
 
 ## Install
 
+```bash
+git clone https://github.com/bsdinsight/petnaly.git
+```
+
 1. Copy the module folders into your Odoo `addons_path`.
 2. Restart Odoo and update the apps list.
-3. Install **Petget: Core** (and **Petget: Dog**), then any extensions.
+3. Install **Petnaly: Core** (and **Petnaly: Dog**), then any extensions.
 
 Requires Odoo Community **19.0**.
 
@@ -40,6 +49,6 @@ modify, and redistribute them under the terms of that license.
 
 ## About
 
-Petget is developed and maintained by **BSD**. Commercial implementation,
-compliance configuration, data migration, hosting and training are available as
-paid services at **https://thepetget.com**.
+Petnaly is developed and maintained by **BSD**. Managed hosting, implementation,
+compliance configuration, data migration and training are available at
+**https://petnaly.com**.

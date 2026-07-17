@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petnaly_kb_article_user,petnaly.kb.article.user,model_petnaly_kb_article,petnaly_core.group_user,1,1,1,0
+access_petnaly_kb_article_manager,petnaly.kb.article.manager,model_petnaly_kb_article,petnaly_core.group_manager,1,1,1,1
+access_petnaly_kb_article_portal,petnaly.kb.article.portal,model_petnaly_kb_article,base.group_portal,1,0,0,0
+access_petnaly_kb_tag_user,petnaly.kb.tag.user,model_petnaly_kb_tag,petnaly_core.group_user,1,1,1,0
+access_petnaly_kb_tag_manager,petnaly.kb.tag.manager,model_petnaly_kb_tag,petnaly_core.group_manager,1,1,1,1
+access_petnaly_kb_tag_portal,petnaly.kb.tag.portal,model_petnaly_kb_tag,base.group_portal,1,0,0,0

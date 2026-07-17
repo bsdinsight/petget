@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petnaly_kb_menu_root"
+              name="Knowledge Base"
+              parent="petnaly_core.petnaly_core_menu_root"
+              sequence="45"/>
+
+    <menuitem id="petnaly_kb_menu_articles"
+              name="Articles"
+              parent="petnaly_kb_menu_root"
+              action="petnaly_kb_action_article"
+              sequence="10"/>
+
+    <menuitem id="petnaly_kb_menu_tags"
+              name="Tags"
+              parent="petnaly_kb_menu_root"
+              action="petnaly_kb_action_tag"
+              sequence="90"/>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petnaly_breeding_menu_breeding"
+              name="Breeding"
+              parent="petnaly_core.petnaly_core_menu_root"
+              sequence="15"/>
+
+    <menuitem id="petnaly_breeding_menu_heat"
+              name="Heat Cycles"
+              parent="petnaly_breeding_menu_breeding"
+              action="petnaly_breeding_action_heat_cycle"
+              sequence="10"/>
+
+    <menuitem id="petnaly_breeding_menu_mating"
+              name="Matings"
+              parent="petnaly_breeding_menu_breeding"
+              action="petnaly_breeding_action_mating"
+              sequence="20"/>
+
+    <menuitem id="petnaly_breeding_menu_pregnancy"
+              name="Pregnancies"
+              parent="petnaly_breeding_menu_breeding"
+              action="petnaly_breeding_action_pregnancy"
+              sequence="30"/>
+
+    <menuitem id="petnaly_breeding_menu_litter"
+              name="Litters"
+              parent="petnaly_breeding_menu_breeding"
+              action="petnaly_breeding_action_litter"
+              sequence="40"/>
+
+</odoo>

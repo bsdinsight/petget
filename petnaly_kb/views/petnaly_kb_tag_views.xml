@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_kb_view_list_tag" model="ir.ui.view">
+        <field name="name">petnaly.kb.tag.list</field>
+        <field name="model">petnaly.kb.tag</field>
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="name"/>
+                <field name="color" widget="color_picker"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="petnaly_kb_action_tag" model="ir.actions.act_window">
+        <field name="name">KB Tags</field>
+        <field name="res_model">petnaly.kb.tag</field>
+        <field name="view_mode">list</field>
+    </record>
+
+</odoo>

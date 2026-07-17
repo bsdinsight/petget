@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petnaly_mobile_token_manager,petnaly.mobile.token.manager,model_petnaly_mobile_token,petnaly_core.group_manager,1,1,1,1
+access_petnaly_animal_portal,petnaly.animal.portal,petnaly_core.model_petnaly_animal,base.group_portal,1,0,0,0
+access_petnaly_document_portal,petnaly.document.portal,petnaly_core.model_petnaly_document,base.group_portal,1,0,0,0
+access_petnaly_reminder_portal,petnaly.reminder.portal,petnaly_core.model_petnaly_reminder,base.group_portal,1,0,0,0

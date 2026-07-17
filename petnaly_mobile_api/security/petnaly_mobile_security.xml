@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- B2C data isolation: a portal customer only sees their own animals
+         (by owner) and the documents/reminders attached to those animals. -->
+
+    <record id="rule_animal_portal_own" model="ir.rule">
+        <field name="name">Mobile: portal sees own animals</field>
+        <field name="model_id" ref="petnaly_core.model_petnaly_animal"/>
+        <field name="domain_force">[('owner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+    </record>
+
+    <record id="rule_document_portal_own" model="ir.rule">
+        <field name="name">Mobile: portal sees own documents</field>
+        <field name="model_id" ref="petnaly_core.model_petnaly_document"/>
+        <field name="domain_force">[('animal_id.owner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+    </record>
+
+    <record id="rule_reminder_portal_own" model="ir.rule">
+        <field name="name">Mobile: portal sees own reminders</field>
+        <field name="model_id" ref="petnaly_core.model_petnaly_reminder"/>
+        <field name="domain_force">[('animal_id.owner_id', '=', user.partner_id.id)]</field>
+        <field name="groups" eval="[(4, ref('base.group_portal'))]"/>
+    </record>
+
+</odoo>

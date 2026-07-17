@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_breeding_view_search_mating" model="ir.ui.view">
+        <field name="name">petnaly.mating.search</field>
+        <field name="model">petnaly.mating</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="dam_id"/>
+                <field name="sire_id"/>
+                <separator/>
+                <filter name="group_dam" string="Dam" context="{'group_by': 'dam_id'}"/>
+                <filter name="group_date" string="Mating Date" context="{'group_by': 'mating_date'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="petnaly_breeding_view_list_mating" model="ir.ui.view">
+        <field name="name">petnaly.mating.list</field>
+        <field name="model">petnaly.mating</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="mating_date"/>
+                <field name="dam_id"/>
+                <field name="sire_id"/>
+                <field name="external_sire" optional="show"/>
+                <field name="mating_method" optional="show"/>
+                <field name="expected_due_date" optional="show"/>
+                <field name="pregnancy_id" optional="show"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="petnaly_breeding_view_form_mating" model="ir.ui.view">
+        <field name="name">petnaly.mating.form</field>
+        <field name="model">petnaly.mating</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_create_pregnancy" type="object"
+                            string="Confirm Pregnancy" class="btn-primary"
+                            invisible="pregnancy_id"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group string="Parents">
+                            <field name="dam_id"/>
+                            <field name="sire_id"/>
+                            <field name="external_sire"/>
+                            <field name="external_sire_reg" invisible="not external_sire"/>
+                            <field name="external_sire_owner" invisible="not external_sire"/>
+                        </group>
+                        <group string="Service">
+                            <field name="mating_method"/>
+                            <field name="ai_semen_type" invisible="mating_method != 'ai'"/>
+                            <field name="ai_technique" invisible="mating_method != 'ai'"/>
+                            <field name="attending_vet" invisible="mating_method != 'ai'"/>
+                            <field name="tie_observed" invisible="mating_method == 'ai'"/>
+                            <field name="supervised"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Dates">
+                            <field name="mating_date"/>
+                            <field name="mating_date_2"/>
+                            <field name="heat_cycle_id"/>
+                            <field name="expected_due_date"/>
+                        </group>
+                        <group string="Outcome">
+                            <field name="pregnancy_id" readonly="1"/>
+                            <field name="stud_fee"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="petnaly_breeding_action_mating" model="ir.actions.act_window">
+        <field name="name">Matings</field>
+        <field name="res_model">petnaly.mating</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="petnaly_breeding_view_search_mating"/>
+    </record>
+
+</odoo>

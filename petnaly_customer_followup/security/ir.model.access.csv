@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petnaly_followup_user,petnaly.followup.user,model_petnaly_followup,petnaly_core.group_user,1,1,1,1
+access_petnaly_followup_manager,petnaly.followup.manager,model_petnaly_followup,petnaly_core.group_manager,1,1,1,1
+access_petnaly_followup_template_user,petnaly.followup.template.user,model_petnaly_followup_template,petnaly_core.group_user,1,0,0,0
+access_petnaly_followup_template_manager,petnaly.followup.template.manager,model_petnaly_followup_template,petnaly_core.group_manager,1,1,1,1

@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_petget_followup_user,petget.followup.user,model_petget_followup,petget_core.group_user,1,1,1,1
-access_petget_followup_manager,petget.followup.manager,model_petget_followup,petget_core.group_manager,1,1,1,1
-access_petget_followup_template_user,petget.followup.template.user,model_petget_followup_template,petget_core.group_user,1,0,0,0
-access_petget_followup_template_manager,petget.followup.template.manager,model_petget_followup_template,petget_core.group_manager,1,1,1,1

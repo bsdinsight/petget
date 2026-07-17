@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_health_rule_test_company" model="ir.rule">
+        <field name="name">Petnaly Health Test: multi-company</field>
+        <field name="model_id" ref="model_petnaly_health_test"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

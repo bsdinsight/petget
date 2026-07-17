@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petnaly_health_menu_tests"
+              name="Health Tests"
+              parent="petnaly_core.petnaly_core_menu_root"
+              action="petnaly_health_action_test"
+              sequence="22"/>
+
+</odoo>

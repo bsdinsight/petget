@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petnaly_heat_cycle_user,petnaly.heat.cycle.user,model_petnaly_heat_cycle,petnaly_core.group_user,1,1,1,1
+access_petnaly_heat_cycle_manager,petnaly.heat.cycle.manager,model_petnaly_heat_cycle,petnaly_core.group_manager,1,1,1,1
+access_petnaly_heat_progesterone_user,petnaly.heat.progesterone.user,model_petnaly_heat_progesterone,petnaly_core.group_user,1,1,1,1
+access_petnaly_heat_progesterone_manager,petnaly.heat.progesterone.manager,model_petnaly_heat_progesterone,petnaly_core.group_manager,1,1,1,1
+access_petnaly_mating_user,petnaly.mating.user,model_petnaly_mating,petnaly_core.group_user,1,1,1,1
+access_petnaly_mating_manager,petnaly.mating.manager,model_petnaly_mating,petnaly_core.group_manager,1,1,1,1
+access_petnaly_pregnancy_user,petnaly.pregnancy.user,model_petnaly_pregnancy,petnaly_core.group_user,1,1,1,1
+access_petnaly_pregnancy_manager,petnaly.pregnancy.manager,model_petnaly_pregnancy,petnaly_core.group_manager,1,1,1,1
+access_petnaly_litter_user,petnaly.litter.user,model_petnaly_litter,petnaly_core.group_user,1,1,1,0
+access_petnaly_litter_manager,petnaly.litter.manager,model_petnaly_litter,petnaly_core.group_manager,1,1,1,1

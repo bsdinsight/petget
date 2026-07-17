@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petnaly_compliance_au_menu_compliance"
+              name="Compliance"
+              parent="petnaly_core.petnaly_core_menu_root"
+              sequence="50"/>
+
+    <menuitem id="petnaly_compliance_au_menu_rules"
+              name="Compliance Rules (AU)"
+              parent="petnaly_compliance_au_menu_compliance"
+              action="petnaly_compliance_au_action_rule"
+              sequence="10"/>
+
+</odoo>

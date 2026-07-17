@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petnaly_animal_user,petnaly.animal.user,model_petnaly_animal,petnaly_core.group_user,1,1,1,0
+access_petnaly_animal_manager,petnaly.animal.manager,model_petnaly_animal,petnaly_core.group_manager,1,1,1,1
+access_petnaly_document_user,petnaly.document.user,model_petnaly_document,petnaly_core.group_user,1,1,1,1
+access_petnaly_document_manager,petnaly.document.manager,model_petnaly_document,petnaly_core.group_manager,1,1,1,1
+access_petnaly_reminder_user,petnaly.reminder.user,model_petnaly_reminder,petnaly_core.group_user,1,1,1,1
+access_petnaly_reminder_manager,petnaly.reminder.manager,model_petnaly_reminder,petnaly_core.group_manager,1,1,1,1
+access_petnaly_note_user,petnaly.note.user,model_petnaly_note,petnaly_core.group_user,1,1,1,0
+access_petnaly_note_manager,petnaly.note.manager,model_petnaly_note,petnaly_core.group_manager,1,1,1,1

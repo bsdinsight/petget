@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Tags -->
+        <record id="tag_labrador" model="petnaly.kb.tag">
+            <field name="name">Labrador</field>
+            <field name="color">10</field>
+        </record>
+        <record id="tag_puppy" model="petnaly.kb.tag">
+            <field name="name">Puppy</field>
+            <field name="color">4</field>
+        </record>
+        <record id="tag_new_owner" model="petnaly.kb.tag">
+            <field name="name">First-time owner</field>
+            <field name="color">3</field>
+        </record>
+        <record id="tag_feeding" model="petnaly.kb.tag">
+            <field name="name">Feeding</field>
+            <field name="color">2</field>
+        </record>
+        <record id="tag_training" model="petnaly.kb.tag">
+            <field name="name">Training</field>
+            <field name="color">6</field>
+        </record>
+
+        <!-- Article 1: Breed guide -->
+        <record id="article_labrador_guide" model="petnaly.kb.article">
+            <field name="name">The Labrador Retriever: A Complete Owner's Guide</field>
+            <field name="subtitle">Why the Lab is the world's favourite family dog</field>
+            <field name="category">breed</field>
+            <field name="species">dog</field>
+            <field name="breed_id" ref="petnaly_dog.breed_labrador_retriever"/>
+            <field name="published" eval="True"/>
+            <field name="date_published" eval="(DateTime.today())"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_labrador'), ref('tag_new_owner')])]"/>
+            <field name="summary">Friendly, eager to please and endlessly patient — here is what life with a Labrador really looks like, and how to help yours thrive.</field>
+            <field name="body" type="html">
+                <div>
+                    <p>The Labrador Retriever earns its place as a family favourite through temperament, not luck. Bred to work closely with people, Labs are sociable, food-motivated and quick to learn — a combination that makes them rewarding to train and forgiving of first-time owners.</p>
+                    <h3>Temperament</h3>
+                    <p>Expect an outgoing, gentle dog that wants to be part of everything you do. Labs generally get on well with children and other animals, but their enthusiasm means early manners training pays off. A bored Lab will find its own entertainment, so daily activity matters.</p>
+                    <h3>Exercise &amp; energy</h3>
+                    <p>Plan for at least an hour of real activity each day: walking, fetch, swimming or scent games. Mental work tires a Lab as much as physical exercise — puzzle feeders and short training sessions are your friends.</p>
+                    <h3>Health to watch</h3>
+                    <p>Responsible lines are screened for hip and elbow dysplasia and for genetic conditions such as PRA and EIC. Ask your breeder for clearances. Because Labs love food, weight control is the single biggest thing you can do for a long, comfortable life.</p>
+                </div>
+            </field>
+        </record>
+
+        <!-- Article 2: Story / lore -->
+        <record id="article_labrador_origins" model="petnaly.kb.article">
+            <field name="name">From Newfoundland Nets to the Family Hearth</field>
+            <field name="subtitle">The surprising origin story of the Labrador</field>
+            <field name="category">story</field>
+            <field name="species">dog</field>
+            <field name="breed_id" ref="petnaly_dog.breed_labrador_retriever"/>
+            <field name="published" eval="True"/>
+            <field name="date_published" eval="(DateTime.today())"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_labrador')])]"/>
+            <field name="summary">The Labrador did not come from Labrador at all — it started as a fisherman's working dog an ocean away.</field>
+            <field name="body" type="html">
+                <div>
+                    <p>Despite the name, the breed traces back to the island of Newfoundland, where small water dogs known as "St. John's dogs" hauled nets and retrieved fish that slipped the line in the cold Atlantic. Their thick, water-shedding coats and "otter" tails were tools of the trade.</p>
+                    <p>In the early 1800s these dogs caught the eye of visiting English nobles, who brought them home and refined them for retrieving game. The name "Labrador" stuck through a mix-up of the neighbouring regions — and a working fisherman's helper quietly became a gundog, then a guide dog, then the companion millions know today.</p>
+                    <p>That heritage still shows: the love of water, the soft mouth, the steady willingness to work alongside people. When your Lab brings you a slipper with its whole body wagging, it is doing the same job its ancestors did — just with friendlier cargo.</p>
+                </div>
+            </field>
+        </record>
+
+        <!-- Article 3: Training -->
+        <record id="article_crate_training" model="petnaly.kb.article">
+            <field name="name">Crate Training 101: A Gentle Start</field>
+            <field name="subtitle">Turn the crate into your puppy's favourite room</field>
+            <field name="category">training</field>
+            <field name="species">dog</field>
+            <field name="published" eval="True"/>
+            <field name="date_published" eval="(DateTime.today())"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_training'), ref('tag_puppy'), ref('tag_new_owner')])]"/>
+            <field name="summary">Done kindly, a crate gives your puppy a safe den, speeds up toilet training and makes travel and vet visits far less stressful.</field>
+            <field name="body" type="html">
+                <div>
+                    <p>A crate is not a cage — it is a den. Dogs are naturally drawn to small, safe spaces, and a crate gives your puppy somewhere to settle while protecting your home during those first chaotic weeks.</p>
+                    <h3>Make it positive from day one</h3>
+                    <p>Leave the door open and toss treats inside. Feed meals in the crate. Add a soft bed and a chew. Never use the crate as punishment — it should only ever mean good things.</p>
+                    <h3>Build duration slowly</h3>
+                    <p>Start with seconds, not hours. Close the door for a moment, reward calm, open it again. Gradually stretch the time, and step out of the room only once your puppy is relaxed.</p>
+                    <h3>Mind the limits</h3>
+                    <p>A young puppy cannot hold its bladder for long — as a rough guide, age in months plus one equals the maximum hours between toilet breaks. Plan night-time and work-day routines around that, and the crate becomes a calm anchor, not a place of stress.</p>
+                </div>
+            </field>
+        </record>
+
+        <!-- Article 4: Nutrition -->
+        <record id="article_feeding_life_stages" model="petnaly.kb.article">
+            <field name="name">Feeding Your Dog Through Every Life Stage</field>
+            <field name="subtitle">From puppy to senior, nutrition that fits the age</field>
+            <field name="category">nutrition</field>
+            <field name="species">dog</field>
+            <field name="published" eval="True"/>
+            <field name="date_published" eval="(DateTime.today())"/>
+            <field name="tag_ids" eval="[(6, 0, [ref('tag_feeding'), ref('tag_new_owner')])]"/>
+            <field name="summary">A dog's needs change dramatically from the puppy months to the senior years. Here is how to adjust as they grow.</field>
+            <field name="body" type="html">
+                <div>
+                    <p>Good nutrition is not one decision — it is a series of adjustments across your dog's life. Matching the food to the stage keeps growth healthy and weight in check.</p>
+                    <h3>Puppy</h3>
+                    <p>Growing bodies need more energy, protein and specific calcium-to-phosphorus ratios. Feed a complete puppy diet in several small meals a day. For large breeds, avoid over-feeding — fast growth strains developing joints.</p>
+                    <h3>Adult</h3>
+                    <p>Once growth finishes, switch to a maintenance diet and usually two meals a day. This is where most dogs quietly gain weight, so measure portions and count treats as part of the daily total.</p>
+                    <h3>Senior</h3>
+                    <p>Older dogs are often less active and may need fewer calories, but quality protein and joint support become more important. Watch body condition closely and adjust with your vet — a lean senior is a comfortable senior.</p>
+                </div>
+            </field>
+        </record>
+
+    </data>
+</odoo>

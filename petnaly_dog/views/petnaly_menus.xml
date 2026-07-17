@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petnaly_dog_menu_config"
+              name="Configuration"
+              parent="petnaly_core.petnaly_core_menu_root"
+              sequence="90"/>
+
+    <menuitem id="petnaly_dog_menu_breeds"
+              name="Dog Breeds"
+              parent="petnaly_dog_menu_config"
+              action="petnaly_dog_action_breed"
+              sequence="10"/>
+
+</odoo>

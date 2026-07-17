@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_pedigree_view_form_animal" model="ir.ui.view">
+        <field name="name">petnaly.animal.form.pedigree</field>
+        <field name="model">petnaly.animal</field>
+        <field name="inherit_id" ref="petnaly_core.petnaly_core_view_form_animal"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='registration_number']" position="after">
+                <field name="registry_body"/>
+                <field name="origin_country_id"/>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Pedigree" name="pedigree">
+                    <group>
+                        <field name="coi_percent"/>
+                        <field name="is_pedigree_only"/>
+                    </group>
+                    <separator string="Pedigree (3 generations)"/>
+                    <field name="pedigree_html"/>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="petnaly_pedigree_view_search_animal" model="ir.ui.view">
+        <field name="name">petnaly.animal.search.pedigree</field>
+        <field name="model">petnaly.animal</field>
+        <field name="inherit_id" ref="petnaly_core.petnaly_core_view_search_animal"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_archived']" position="after">
+                <separator/>
+                <filter name="filter_managed" string="Managed animals"
+                        domain="[('is_pedigree_only', '=', False)]"/>
+                <filter name="filter_pedigree_only" string="Pedigree references"
+                        domain="[('is_pedigree_only', '=', True)]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Hide pedigree-only ancestors from the default Animals list -->
+    <record id="petnaly_core.petnaly_core_action_animal" model="ir.actions.act_window">
+        <field name="context">{'search_default_filter_managed': 1}</field>
+    </record>
+
+    <!-- Keep the Notes tab last, after all module-added tabs (high priority
+         so it applies after Health/Pedigree pages are inserted). -->
+    <record id="petnaly_pedigree_view_form_animal_notes_last" model="ir.ui.view">
+        <field name="name">petnaly.animal.form.notes-last</field>
+        <field name="model">petnaly.animal</field>
+        <field name="inherit_id" ref="petnaly_core.petnaly_core_view_form_animal"/>
+        <field name="priority">100</field>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <xpath expr="//page[@name='notes']" position="move"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

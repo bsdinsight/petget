@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="petnaly_followup_menu_followups"
+              name="Customer Follow-ups"
+              parent="petnaly_buyer_sale.petnaly_buyer_sale_menu_sales"
+              action="petnaly_followup_action"
+              sequence="30"/>
+
+    <menuitem id="petnaly_followup_menu_templates"
+              name="Follow-up Templates"
+              parent="petnaly_buyer_sale.petnaly_buyer_sale_menu_sales"
+              action="petnaly_followup_action_template"
+              sequence="90"/>
+
+</odoo>

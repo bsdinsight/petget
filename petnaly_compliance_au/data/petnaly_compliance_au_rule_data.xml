@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="rule_nsw_dog" model="petnaly.compliance.au.rule">
+            <field name="state">nsw</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">20</field>
+            <field name="citation">Animal Welfare Act 2024 (NSW)</field>
+        </record>
+
+        <record id="rule_vic_dog" model="petnaly.compliance.au.rule">
+            <field name="state">vic</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">50</field>
+            <field name="citation">Domestic Animals Act 1994 (VIC)</field>
+        </record>
+
+        <record id="rule_qld_dog" model="petnaly.compliance.au.rule">
+            <field name="state">qld</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">0</field>
+            <field name="citation">Animal Management (Cats &amp; Dogs) Act 2008 (QLD) — verify local limits</field>
+        </record>
+
+        <record id="rule_sa_dog" model="petnaly.compliance.au.rule">
+            <field name="state">sa</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">20</field>
+            <field name="citation">Dog and Cat Management Act 1995 (SA)</field>
+        </record>
+
+        <record id="rule_wa_dog" model="petnaly.compliance.au.rule">
+            <field name="state">wa</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">0</field>
+            <field name="citation">Dog Act 1976 (WA) — verify local limits</field>
+        </record>
+
+        <record id="rule_tas_dog" model="petnaly.compliance.au.rule">
+            <field name="state">tas</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">0</field>
+            <field name="citation">Dog Control Act 2000 (TAS) — verify local limits</field>
+        </record>
+
+        <record id="rule_nt_dog" model="petnaly.compliance.au.rule">
+            <field name="state">nt</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">0</field>
+            <field name="citation">Animal Protection Act 2018 (NT) — verify local limits</field>
+        </record>
+
+        <record id="rule_act_dog" model="petnaly.compliance.au.rule">
+            <field name="state">act</field>
+            <field name="species">dog</field>
+            <field name="max_fertile_females">0</field>
+            <field name="citation">Domestic Animals Act 2000 (ACT) — verify local limits</field>
+        </record>
+
+    </data>
+</odoo>

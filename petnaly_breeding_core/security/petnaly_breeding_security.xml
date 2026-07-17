@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_breeding_rule_heat_company" model="ir.rule">
+        <field name="name">Petnaly Heat Cycle: multi-company</field>
+        <field name="model_id" ref="model_petnaly_heat_cycle"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="petnaly_breeding_rule_mating_company" model="ir.rule">
+        <field name="name">Petnaly Mating: multi-company</field>
+        <field name="model_id" ref="model_petnaly_mating"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="petnaly_breeding_rule_pregnancy_company" model="ir.rule">
+        <field name="name">Petnaly Pregnancy: multi-company</field>
+        <field name="model_id" ref="model_petnaly_pregnancy"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+    <record id="petnaly_breeding_rule_litter_company" model="ir.rule">
+        <field name="name">Petnaly Litter: multi-company</field>
+        <field name="model_id" ref="model_petnaly_litter"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

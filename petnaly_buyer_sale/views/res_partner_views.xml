@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_buyer_sale_view_form_partner" model="ir.ui.view">
+        <field name="name">res.partner.form.petnaly.buyer</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="is_buyer"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="petnaly_buyer_sale_action_buyer" model="ir.actions.act_window">
+        <field name="name">Buyers</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="domain">[('is_buyer', '=', True)]</field>
+        <field name="context">{'default_is_buyer': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Add your first buyer</p>
+            <p>Buyers are contacts flagged as buyers — they appear here automatically when you create a reservation.</p>
+        </field>
+    </record>
+
+</odoo>

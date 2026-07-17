@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_customer_followup_rule_company" model="ir.rule">
+        <field name="name">Petnaly Follow-up: multi-company</field>
+        <field name="model_id" ref="model_petnaly_followup"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+    </record>
+
+</odoo>

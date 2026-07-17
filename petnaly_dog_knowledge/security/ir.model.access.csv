@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_petnaly_dog_life_stage_user,petnaly.dog.life.stage.user,model_petnaly_dog_life_stage,petnaly_core.group_user,1,0,0,0
+access_petnaly_dog_life_stage_manager,petnaly.dog.life.stage.manager,model_petnaly_dog_life_stage,petnaly_core.group_manager,1,1,1,1
+access_petnaly_breed_growth_user,petnaly.breed.growth.user,model_petnaly_breed_growth,petnaly_core.group_user,1,1,1,1
+access_petnaly_breed_growth_manager,petnaly.breed.growth.manager,model_petnaly_breed_growth,petnaly_core.group_manager,1,1,1,1
+access_petnaly_dog_color_user,petnaly.dog.color.user,model_petnaly_dog_color,petnaly_core.group_user,1,1,1,0
+access_petnaly_dog_color_manager,petnaly.dog.color.manager,model_petnaly_dog_color,petnaly_core.group_manager,1,1,1,1

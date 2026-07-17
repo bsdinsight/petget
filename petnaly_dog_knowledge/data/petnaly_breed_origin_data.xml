@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <!-- noupdate=0: re-asserts seeded origins on each upgrade (existing + fresh DBs) -->
+  <data>
+
+    <record id="petnaly_dog.breed_labrador_retriever" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.ca'), ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_golden_retriever" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_german_shepherd_dog" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.de')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_french_bulldog" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.fr'), ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_bulldog" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_poodle_standard" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.de'), ref('base.fr')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_beagle" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_rottweiler" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.de')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_dachshund" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.de')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_pembroke_welsh_corgi" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_yorkshire_terrier" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_boxer" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.de')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_siberian_husky" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.ru')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_cavalier_king_charles_spaniel" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.uk')])]"/>
+    </record>
+    <record id="petnaly_dog.breed_chihuahua" model="petnaly.dog.breed">
+      <field name="origin_country_ids" eval="[(6, 0, [ref('base.mx')])]"/>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="petnaly_health_view_form_mating" model="ir.ui.view">
+        <field name="name">petnaly.mating.form.health</field>
+        <field name="model">petnaly.mating</field>
+        <field name="inherit_id" ref="petnaly_breeding_core.petnaly_breeding_view_form_mating"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/group[1]" position="before">
+                <field name="breeding_warning_count" invisible="1"/>
+                <div class="alert alert-warning" role="alert"
+                     invisible="breeding_warning_count == 0">
+                    <field name="breeding_warning_html"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
